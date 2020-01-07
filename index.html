@@ -2,6 +2,9 @@
 <html>
   <head>
     <title>From og</title>
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="UNSET" />
+    <meta property="og:description" content="no description" />
   </head>
   <body>
     <h1>OG meta from js</h1>
@@ -12,10 +15,10 @@
         link.content = content
         document.getElementsByTagName('head')[0].appendChild(link)
       }
+      document.querySelector('meta[property="og:title"]').content = 'from js sync'
+      document.querySelector('meta[property="og:description"]').content = 'description from js sync'
       createMeta('og:type', 'article')
-      createMeta('og:description', 'dfescription from js sync')
       createMeta('og:site_name', 'Bearer.sh')
-      createMeta('og:title', 'from js sync')
       createMeta('og:url', window.location)
       createMeta('og:image', 'https://' + window.location.hostname + '/img.jpg')
     </script>
